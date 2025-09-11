@@ -2,6 +2,12 @@
 
 @section('content')
     <style>
+        .collapse {
+            min-height: 270px;
+            width: 100%;
+            display: block;
+        }
+
         .collapse-btn {
             min-height: 56px;
             transition: background 0.2s;
@@ -24,12 +30,14 @@
 
         /* --- Ticket Card --- */
         .ticket-card {
-            width: 308px;
+            width: 260px;
+            min-width: 260px;
+            max-width: 260px;
             height: 239px;
             background: #f0f5ff;
             border-radius: 16px;
             padding: 16px;
-            box-shadow: 0 .125rem .25rem rgba($black, .075);
+            box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -144,26 +152,50 @@
         .rounded-32 {
             border-radius: 32px !important;
         }
+
+        .row.row-cols-4 {
+            flex-wrap: nowrap !important;
+            justify-content: center;
+            gap: 0;
+        }
+
+        @media (max-width: 1200px) {
+            .row.row-cols-4 {
+                flex-wrap: wrap !important;
+            }
+
+            .ticket-card {
+                width: 100%;
+                min-width: 220px;
+                max-width: 100%;
+            }
+        }
     </style>
-    <div class="container py-4">
-        <div class="mx-auto" style="max-width:900px;">
-            <div class="card p-4 shadow-sm rounded-32">
-                <h4 class="mb-3 fw-bold">Labsco Marathon</h4>
+    <div class="container py-4" style="max-width:1200px;">
+        <div class="mx-auto mb-4">
+            <h1 class="mb-4 p-2 h-4 fw-bold text-center" style="color:#375AD9;">Race Category</h1>
+            <div class="card p-4 shadow-sm rounded-32" style="max-width:1200px; width:100%;">
+                <h3 class="mb-4 p-2 h-4 fw-bold">Labsco Marathon</h3>
                 <!-- Early Bird -->
-                <div class="mb-3 shadow border border-2 p-2" style="border-radius:8px;">
+                <div class="mb-4 shadow border border-2 p-2"
+                    style="border-radius:16px; max-width:1200px; margin:auto; width:100%;">
                     <button
                         class="btn fw-bold w-100 text-start d-flex justify-content-between align-items-center collapse-btn"
                         type="button" data-bs-toggle="collapse" data-bs-target="#earlyBirdCollapse" aria-expanded="false"
                         aria-controls="earlyBirdCollapse" style="background:#f8f9fa; border-radius:8px;">
-                        <span>Early Bird | 01 August - 25 August 2025</span>
+                        <h4 class="fw-bold">Early Bird | 01 August - 25 August 2025</h4>
                         <span class="badge text-white px-4 py-2 fs-6 fw-bold" style="background:#F37F0D;">The period has
                             ended</span>
                         <span class="arrow-icon"><i class="bi bi-chevron-down"></i></span>
                     </button>
-                    <div class="collapse show p-2" id="earlyBirdCollapse">
-                        <div class="row row-cols-2 justify-content-center" style="border-radius:8px;">
+                    <div class="collapse show p-2 w-100" id="earlyBirdCollapse">
+                        <div class="row row-cols-4 justify-content-center flex-nowrap"
+                            style="border-radius:8px; overflow-x:auto;">
+
+
                             <!-- 5K -->
-                            <div class="ticket-card" data-race="5K Fun Run" data-price="200000" data-stock="true">
+                            <div class="ticket-card disabled-card" data-race="5K Fun Run" data-price="200000"
+                                data-stock="false" style="opacity:0.6; pointer-events:none;">
                                 <div>
                                     <div class="ticket-card-header">
                                         <span class="badge-success-custom">Regular</span>
@@ -177,11 +209,12 @@
                                         <span class="ticket-price">Rp 200,000</span>
                                     </div>
                                 </div>
-                                <button class="ticket-btn select">Select This Race</button>
+                                <button class="ticket-btn soldout" disabled>Sold Out</button>
                             </div>
 
                             <!-- 10K -->
-                            <div class="ticket-card" data-race="10K Challenge" data-price="200000" data-stock="true">
+                            <div class="ticket-card disabled-card" data-race="10K Challenge" data-price="200000"
+                                data-stock="false" style="opacity:0.6; pointer-events:none;">
                                 <div>
                                     <div class="ticket-card-header">
                                         <span class="badge-success-custom">Regular</span>
@@ -195,11 +228,12 @@
                                         <span class="ticket-price">Rp 200,000</span>
                                     </div>
                                 </div>
-                                <button class="ticket-btn select">Select This Race</button>
+                                <button class="ticket-btn soldout" disabled>Sold Out</button>
                             </div>
 
                             <!-- 24K -->
-                            <div class="ticket-card" data-race="24K Half Marathon" data-price="200000" data-stock="true">
+                            <div class="ticket-card disabled-card" data-race="24K Half Marathon" data-price="200000"
+                                data-stock="false" style="opacity:0.6; pointer-events:none;">
                                 <div>
                                     <div class="ticket-card-header">
                                         <span class="badge-success-custom">Regular</span>
@@ -213,11 +247,12 @@
                                         <span class="ticket-price">Rp 200,000</span>
                                     </div>
                                 </div>
-                                <button class="ticket-btn select">Select This Race</button>
+                                <button class="ticket-btn soldout" disabled>Sold Out</button>
                             </div>
 
                             <!-- 42K -->
-                            <div class="ticket-card" data-race="42K Full Marathon" data-price="200000" data-stock="false">
+                            <div class="ticket-card disabled-card" data-race="42K Full Marathon" data-price="200000"
+                                data-stock="false" style="opacity:0.6; pointer-events:none;">
                                 <div>
                                     <div class="ticket-card-header">
                                         <span class="badge-danger-custom">Regular</span>
@@ -237,17 +272,20 @@
                     </div>
                 </div>
                 <!-- Regular -->
-                <div class="mb-3 shadow border border-2">
+                <div class="mb-4 shadow border border-2 p-2"
+                    style="border-radius:16px; max-width:1200px; margin:auto; width:100%;">
                     <button
                         class="btn fw-bold w-100 text-start d-flex justify-content-between align-items-center collapse-btn"
                         type="button" data-bs-toggle="collapse" data-bs-target="#regularCollapse" aria-expanded="true"
-                        aria-controls="regularCollapse" style="background:#f8f9fa;">
-                        <span>Regular | 26 August - 26 September 2025</span>
-                        <span class="badge bg-primary">Tickets available</span>
+                        aria-controls="regularCollapse" style="background:#f8f9fa; border-radius:8px;">
+                        <h4 class="fw-bold">Regular | 26 August - 26 September 2025</h4>
+                        <span class="badge text-white px-4 py-2 fs-6 fw-bold" style="background:#375AD9;">Tickets
+                            available</span>
                         <span class="arrow-icon"><i class="bi bi-chevron-up"></i></span>
                     </button>
-                    <div class="collapse show border border-2 mt-2" id="regularCollapse">
-                        <div class="row row-cols-2 g-4 justify-content-center p-4">
+                    <div class="collapse show p-2 w-100" id="regularCollapse">
+                        <div class="row row-cols-4 justify-content-center flex-nowrap"
+                            style="border-radius:8px; overflow-x:auto;">
                             <!-- 5K -->
                             <div class="ticket-card" data-race="5K Fun Run" data-price="200000" data-stock="true">
                                 <div>
@@ -327,8 +365,8 @@
             </div>
         </div>
         <!-- Summary -->
-        <div class="card mt-4 p-3 shadow-sm d-flex flex-row justify-content-between align-items-center" id="summaryBar"
-            style="max-width:900px;margin:auto;">
+        <div class="card shadow-lg px-4 d-flex flex-row justify-content-between align-items-center position-fixed bottom-0 start-0 w-100"
+            id="summaryBar" style="z-index:1050; border-radius:0; height:100px;">
             <div>
                 <span id="selectedRaceName" class="fw-bold">No race selected</span>
             </div>

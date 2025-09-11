@@ -19,5 +19,13 @@ Route::get('/', function () {
 });
 
 Route::get('/category-run', function () {
-    return view('category_run');
+    return view('category-run');
 });
+
+Route::get('/login-page', function () {
+    return view('auth.login-page');
+})->name('login-page');
+
+Route::get('/register-page', function () {
+    return view('auth.register-page');
+})->name('register-page');
