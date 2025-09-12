@@ -154,45 +154,34 @@
         }
 
         .row.row-cols-4 {
-            flex-wrap: nowrap !important;
-            justify-content: center;
+            flex-wrap: wrap !important;
+            justify-content: flex-start;
             gap: 0;
         }
-
-        @media (max-width: 1200px) {
-            .row.row-cols-4 {
-                flex-wrap: wrap !important;
-            }
-
-            .ticket-card {
-                width: 100%;
-                min-width: 220px;
-                max-width: 100%;
-            }
-        }
     </style>
-    <div class="container py-4" style="max-width:1200px;">
-        <div class="mx-auto mb-4">
+    <div class="container py-4 d-flex flex-column justify-content-center align-items-center"
+        style="max-width:1200px; min-height:calc(100vh - 120px);">
+        <div class="mx-auto mb-4 w-100">
             <h1 class="mb-4 p-2 h-4 fw-bold text-center" style="color:#375AD9;">Race Category</h1>
             <div class="card p-4 shadow-sm rounded-32" style="max-width:1200px; width:100%;">
                 <h3 class="mb-4 p-2 h-4 fw-bold">Labsco Marathon</h3>
                 <!-- Early Bird -->
-                <div class="mb-4 shadow border border-2 p-2"
+                <div class="mb-4 shadow-sm border border-2 p-2"
                     style="border-radius:16px; max-width:1200px; margin:auto; width:100%;">
                     <button
                         class="btn fw-bold w-100 text-start d-flex justify-content-between align-items-center collapse-btn"
                         type="button" data-bs-toggle="collapse" data-bs-target="#earlyBirdCollapse" aria-expanded="false"
                         aria-controls="earlyBirdCollapse" style="background:#f8f9fa; border-radius:8px;">
-                        <h4 class="fw-bold">Early Bird | 01 August - 25 August 2025</h4>
-                        <span class="badge text-white px-4 py-2 fs-6 fw-bold" style="background:#F37F0D;">The period has
+                        <span class="fw-bold" style="font-size: 24px">Early Bird | 01 August - 25 August 2025</span>
+                        <span class="badge text-white px-4 py-2 fw-bold" style="background:#F37F0D; font-size: 18px;">The
+                            period has
                             ended</span>
-                        <span class="arrow-icon"><i class="bi bi-chevron-down"></i></span>
+                        <span class="arrow-icon"><img src="{{ asset('assets/icons/ic-arrow-down.svg') }}" alt="arrow"
+                                style="width:20px; height:20px;"></span>
                     </button>
                     <div class="collapse show p-2 w-100" id="earlyBirdCollapse">
                         <div class="row row-cols-4 justify-content-center flex-nowrap"
                             style="border-radius:8px; overflow-x:auto;">
-
-
                             <!-- 5K -->
                             <div class="ticket-card disabled-card" data-race="5K Fun Run" data-price="200000"
                                 data-stock="false" style="opacity:0.6; pointer-events:none;">
@@ -272,16 +261,18 @@
                     </div>
                 </div>
                 <!-- Regular -->
-                <div class="mb-4 shadow border border-2 p-2"
+                <div class="mb-4 shadow-sm border border-2 p-2"
                     style="border-radius:16px; max-width:1200px; margin:auto; width:100%;">
                     <button
                         class="btn fw-bold w-100 text-start d-flex justify-content-between align-items-center collapse-btn"
                         type="button" data-bs-toggle="collapse" data-bs-target="#regularCollapse" aria-expanded="true"
                         aria-controls="regularCollapse" style="background:#f8f9fa; border-radius:8px;">
-                        <h4 class="fw-bold">Regular | 26 August - 26 September 2025</h4>
-                        <span class="badge text-white px-4 py-2 fs-6 fw-bold" style="background:#375AD9;">Tickets
+                        <span class="fw-bold" style="font-size: 24px">Regular | 26 August - 26 September 2025</span>
+                        <span class="badge text-white px-4 py-2 fw-bold"
+                            style="background:#375AD9; font-size: 18px;">Tickets
                             available</span>
-                        <span class="arrow-icon"><i class="bi bi-chevron-up"></i></span>
+                        <span class="arrow-icon"><img src="{{ asset('assets/icons/ic-arrow-up.svg') }}" alt="arrow"
+                                style="width:20px; height:20px;"></span>
                     </button>
                     <div class="collapse show p-2 w-100" id="regularCollapse">
                         <div class="row row-cols-4 justify-content-center flex-nowrap"
@@ -364,32 +355,59 @@
                 </div>
             </div>
         </div>
+
         <!-- Summary -->
-        <div class="card shadow-lg px-4 d-flex flex-row justify-content-between align-items-center position-fixed bottom-0 start-0 w-100"
-            id="summaryBar" style="z-index:1050; border-radius:0; height:100px;">
-            <div>
-                <span id="selectedRaceName" class="fw-bold">No race selected</span>
-            </div>
-            <div>
-                <span>Total Price</span>
-                <span id="selectedRacePrice" class="fw-bold text-primary ms-2">Rp 0</span>
-                <button class="btn btn-primary ms-3" id="buyBtn" disabled>Buy Tickets</button>
+        <div class="card shadow-lg justify-content-center align-items-center position-fixed bottom-0 start-0 w-100"
+            id="summaryBar" style="z-index:1050; border-radius:0; height:70px;">
+            <div class="d-flex flex-row justify-content-between align-items-center" style="max-width:1200px; width:100%;">
+                <!-- Left: Race + Counter -->
+                <div class="d-flex flex-column justify-content-start align-items-start">
+                    <span id="selectedRaceName" class="fw-bold" style="font-size: 24px;">Regular 5K</span>
+
+                    <!-- Counter -->
+                    <div class="d-flex align-items-center">
+                        <button class="btn btn-sm me-1 p-0" id="counterMinus">
+                            <img src="{{ asset('assets/icons/ic-button-min.svg') }}" alt="minus"
+                                style="width:25px; height:25px;">
+                        </button>
+                        <div class="border px-2 mx-2 border border-2" style="border-radius:8px; solid #6666;">
+                            <span class="fw-bold" id="counterValue">1</span>
+                        </div>
+                        <button class="btn btn-sm ms-1 p-0" id="counterPlus">
+                            <img src="{{ asset('assets/icons/ic-button-plus.svg') }}" alt="plus"
+                                style="width:25px; height:25px;">
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Right: Price + Buy Button -->
+                <div class="d-flex align-items-center">
+                    <div class="me-3 text-end">
+                        <span class="d-block" style="font-size: 14px;">Total Price</span>
+                        <span id="selectedRacePrice" class="fw-bold text-primary" style="font-size: 18px;">Rp
+                            150,000</span>
+                    </div>
+                    <button class="btn btn-primary" id="buyBtn">Buy Tickets</button>
+                </div>
             </div>
         </div>
+
     </div>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Collapse arrow toggle
             function toggleArrow(btn, collapseId) {
                 var collapse = document.getElementById(collapseId);
-                var icon = btn.querySelector('.arrow-icon i');
+                var icon = btn.querySelector('.arrow-icon img');
                 collapse.addEventListener('show.bs.collapse', function() {
-                    icon.classList.remove('bi-chevron-down');
-                    icon.classList.add('bi-chevron-up');
+                    icon.src = '{{ asset('assets/icons/ic-arrow-up.svg') }}';
+                    icon.style.width = '20px';
+                    icon.style.height = '20px';
                 });
                 collapse.addEventListener('hide.bs.collapse', function() {
-                    icon.classList.remove('bi-chevron-up');
-                    icon.classList.add('bi-chevron-down');
+                    icon.src = '{{ asset('assets/icons/ic-arrow-down.svg') }}';
+                    icon.style.width = '20px';
+                    icon.style.height = '20px';
                 });
             }
             var earlyBtn = document.querySelector('[data-bs-target="#earlyBirdCollapse"]');
@@ -430,6 +448,25 @@
                             .toLocaleString('id-ID');
                         buyBtn.disabled = false;
                     });
+                }
+            });
+
+            // Counter logic
+            var counterValue = document.getElementById('counterValue');
+            var counterMinus = document.getElementById('counterMinus');
+            var counterPlus = document.getElementById('counterPlus');
+            var minValue = 1;
+            var maxValue = 10;
+            counterMinus.addEventListener('click', function() {
+                var val = parseInt(counterValue.textContent);
+                if (val > minValue) {
+                    counterValue.textContent = val - 1;
+                }
+            });
+            counterPlus.addEventListener('click', function() {
+                var val = parseInt(counterValue.textContent);
+                if (val < maxValue) {
+                    counterValue.textContent = val + 1;
                 }
             });
         });
