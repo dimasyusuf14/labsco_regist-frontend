@@ -94,6 +94,12 @@
             color: #2563EB;
         }
 
+        .ticket-price-early {
+            font-weight: 700;
+            font-size: 18px;
+            color: #D9379E;
+        }
+
         /* --- Button --- */
         .ticket-btn {
             width: 100%;
@@ -195,7 +201,7 @@
                                     </div>
                                     <div class="ticket-card-price">
                                         <span>Reguler</span>
-                                        <span class="ticket-price">Rp 200,000</span>
+                                        <span class="ticket-price-early">Rp 200,000</span>
                                     </div>
                                 </div>
                                 <button class="ticket-btn soldout" disabled>Sold Out</button>
@@ -214,7 +220,7 @@
                                     </div>
                                     <div class="ticket-card-price">
                                         <span>Reguler</span>
-                                        <span class="ticket-price">Rp 200,000</span>
+                                        <span class="ticket-price-early">Rp 200,000</span>
                                     </div>
                                 </div>
                                 <button class="ticket-btn soldout" disabled>Sold Out</button>
@@ -233,7 +239,7 @@
                                     </div>
                                     <div class="ticket-card-price">
                                         <span>Reguler</span>
-                                        <span class="ticket-price">Rp 200,000</span>
+                                        <span class="ticket-price-early">Rp 200,000</span>
                                     </div>
                                 </div>
                                 <button class="ticket-btn soldout" disabled>Sold Out</button>
@@ -252,7 +258,7 @@
                                     </div>
                                     <div class="ticket-card-price">
                                         <span>Reguler</span>
-                                        <span class="ticket-price">Rp 200,000</span>
+                                        <span class="ticket-price-early">Rp 200,000</span>
                                     </div>
                                 </div>
                                 <button class="ticket-btn soldout" disabled>Sold Out</button>
@@ -383,11 +389,14 @@
                 <!-- Right: Price + Buy Button -->
                 <div class="d-flex align-items-center">
                     <div class="me-3 text-end">
-                        <span class="d-block" style="font-size: 14px;">Total Price</span>
-                        <span id="selectedRacePrice" class="fw-bold text-primary" style="font-size: 18px;">Rp
+                        <span class="d-block" style="font-size: 16px; font-weight: semi-bold;">Total Price</span>
+                        <span id="selectedRacePrice" class="fw-bold" style="font-size: 24px; color: #375AD9;">Rp
                             150,000</span>
                     </div>
-                    <button class="btn btn-primary" id="buyBtn">Buy Tickets</button>
+                    <button class="btn px-16 py-8" id="buyBtn"
+                        style="font-size: 24px; font-weight: semi-bold; background: #375AD9; color: white; border-radius: 8px;">Buy
+                        Tickets
+                    </button>
                 </div>
             </div>
         </div>

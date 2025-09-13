@@ -29,3 +29,19 @@ Route::get('/login-page', function () {
 Route::get('/register-page', function () {
     return view('auth.register-page');
 })->name('register-page');
+
+Route::get('/registration-one', function () {
+    return view('registration.registration-one');
+})->name('registration-one');
+
+Route::get('/registration-two', function () {
+    return view('registration.registration-two');
+})->name('registration-two');
+
+Route::get('/registration-three', function () {
+    return view('registration.registration-three');
+})->name('registration-three');
+
+Route::get('/data-confirmation', function () {
+    return view('registration.data-confirmation');
+})->name('data-confirmation');
