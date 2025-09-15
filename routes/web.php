@@ -45,3 +45,7 @@ Route::get('/registration-three', function () {
 Route::get('/data-confirmation', function () {
     return view('registration.data-confirmation');
 })->name('data-confirmation');
+
+Route::get('terms-and-conditions', function () {
+    return view('terms-and-conditions');
+})->name('terms-and-conditions');
