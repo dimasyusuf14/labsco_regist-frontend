@@ -1,0 +1,254 @@
+//category-run page
+
+.collapse {
+    min-height: 270px;
+    width: 100%;
+    display: block;
+}
+
+.collapse-btn {
+    min-height: 56px;
+    transition: background 0.2s;
+}
+
+.collapse-btn:focus,
+.collapse-btn:active,
+.collapse-btn.show,
+.collapse-btn[aria-expanded="true"] {
+    box-shadow: none !important;
+    border: none !important;
+    outline: none !important;
+}
+
+.arrow-icon {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+/* --- Ticket Card --- */
+.ticket-card {
+    width: 260px;
+    min-width: 260px;
+    max-width: 260px;
+    height: 239px;
+    background: #f0f5ff;
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: "Inter", sans-serif;
+    transition: transform 0.2s ease, border 0.2s ease;
+    margin: 8px;
+}
+
+.ticket-card:hover {
+    transform: translateY(-3px);
+    border: 2px solid #5b7eff;
+}
+
+/* Tambahan border saat selected */
+.ticket-card.selected {
+    border: 2px solid #375ad9;
+}
+
+.ticket-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.ticket-card-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #000;
+}
+
+.ticket-card-info {
+    font-size: 14px;
+    color: #6b7280;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.ticket-card-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 15px;
+    margin-bottom: 1rem;
+    color: #6b7280;
+}
+
+.ticket-price {
+    font-weight: 700;
+    font-size: 18px;
+    color: #2563eb;
+}
+
+.ticket-price-early {
+    font-weight: 700;
+    font-size: 18px;
+    color: #d9379e;
+}
+
+/* --- Button --- */
+.ticket-btn {
+    width: 100%;
+    padding: 0.7rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 15px;
+    border: none;
+}
+
+.ticket-btn.select {
+    background: #2563eb;
+    color: #fff;
+}
+
+.ticket-btn.select:hover {
+    background: #1d4ed8;
+}
+
+.ticket-btn.selected {
+    background: #f37f0d;
+    color: #fff;
+}
+
+.ticket-btn.soldout {
+    background: #9ca3af;
+    color: #fff;
+    cursor: not-allowed;
+}
+
+/* --- Badges --- */
+.badge-success-custom {
+    background: #2f5233;
+    color: #f9d835;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.badge-danger-custom {
+    background: #dc2626;
+    color: #fff;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.ticket-distance {
+    font-size: 14px;
+    font-weight: 600;
+    color: #000;
+}
+
+.rounded-32 {
+    border-radius: 32px !important;
+}
+
+.row.row-cols-4 {
+    flex-wrap: wrap !important;
+    justify-content: flex-start;
+    gap: 0;
+}
+
+//login page
+.custom-input-group {
+    transition: border-color 0.2s;
+}
+
+.custom-input-group:focus-within {
+    border-color: #2563eb !important;
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.15);
+}
+
+.btn-google-signin {
+    transition: background 0.2s;
+    color: #666666 !important;
+    border-color: #666666 !important;
+}
+
+.btn-google-signin:hover {
+    background: #ececec !important;
+    color: #666666 !important;
+}
+
+.btn-signin {
+    background: #375ad9;
+    color: #fff;
+    border-radius: 8px;
+    height: 50px;
+    transition: background 0.2s;
+}
+
+.btn-signin:hover {
+    background: #3f65ec !important;
+    color: #fff !important;
+}
+
+//register page
+.custom-input-group {
+    transition: border-color 0.2s;
+    border-color: #666666 !important;
+}
+
+.custom-input-group:focus-within {
+    border-color: #2563eb !important;
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.15);
+}
+
+.btn-google-signin {
+    transition: background 0.2s;
+    color: #666666 !important;
+    border-color: #666666 !important;
+}
+
+.btn-google-signin:hover {
+    background: #ececec !important;
+    color: #666666 !important;
+}
+
+.btn-signup {
+    background: #375ad9;
+    color: #fff;
+    border-radius: 8px;
+    height: 50px;
+    transition: background 0.2s;
+}
+
+.btn-signup:hover {
+    background: #3f65ec !important;
+    color: #fff !important;
+}
+
+.password-toggle img {
+    transition: filter 0.2s;
+}
+
+@media (max-width: 450.98px) {
+    .login-body {
+        border-radius: 0;
+        padding: 30px 20px;
+    }
+
+    .login-logo {
+        font-size: 1rem;
+    }
+
+    .login-form .form-control,
+    .login-form [type="submit"] {
+        height: 45px;
+        border-radius: 8px;
+    }
+}

@@ -1,4 +1,4 @@
-@extends('layouts.index')
+@extends('app')
 
 @section('content')
     <div class="col-lg-8 py-4 col-12 mx-auto text-center d-flex flex-column justify-content-center align-items-center">
@@ -150,14 +150,16 @@
                 <a href="{{ route('registration-one') }}"
                     class="btn btn-outline-secondary px-4 py-2 d-flex align-items-center gap-2"
                     style="font-size:15px; font-weight:500; border-radius:8px; border-width:2px; box-shadow:none;">
-                    <img src="{{ asset('assets/icons/ic-arrow-back.svg') }}" alt="Back" style="width:13px;height:11px;">
+                    <img src="{{ asset('assets/images/icons/ic-arrow-back.svg') }}" alt="Back"
+                        style="width:13px;height:11px;">
                     <span style="font-size:15px; font-weight:500;">Back</span>
                 </a>
                 <a href="{{ route('registration-three') }}"
                     class="btn btn-primary px-4 py-2 d-flex align-items-center gap-2"
                     style="font-size:15px; font-weight:600; border-radius:8px; box-shadow:none;">
                     <span style="font-size:15px; font-weight:600;">Next</span>
-                    <img src="{{ asset('assets/icons/ic-arrow-next.svg') }}" alt="Next" style="width:13px;height:11px;">
+                    <img src="{{ asset('assets/images/icons/ic-arrow-next.svg') }}" alt="Next"
+                        style="width:13px;height:11px;">
                 </a>
             </div>
         </div>

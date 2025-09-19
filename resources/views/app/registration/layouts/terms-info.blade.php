@@ -1,3 +1,5 @@
+<!-- Right: Terms & Conditions Info -->
+
 <div class="col-lg-4 col-12">
     <div class="card shadow-sm mb-4 p-4" style="border-radius: 16px">
         <div class="card-body p-0">
@@ -10,7 +12,7 @@
             <ul class="list-unstyled mb-0">
                 <li class="mb-3 d-flex align-items-start gap-3">
                     <div>
-                        <img src="{{ asset('assets/icons/ic-information.svg') }}" alt="info"
+                        <img src="{{ asset('assets/images/icons/ic-information.svg') }}" alt="info"
                             style="width:15px; height:15px; ">
                     </div>
                     <div>
@@ -23,7 +25,7 @@
                 </li>
                 <li class="mb-3 d-flex align-items-start gap-3">
                     <div>
-                        <img src="{{ asset('assets/icons/ic-information.svg') }}" alt="info"
+                        <img src="{{ asset('assets/images/icons/ic-information.svg') }}" alt="info"
                             style="width:15px; height:15px; ">
                     </div>
                     <div>
@@ -37,7 +39,7 @@
                 </li>
                 <li class="mb-3 d-flex align-items-start gap-3">
                     <div>
-                        <img src="{{ asset('assets/icons/ic-information.svg') }}" alt="info"
+                        <img src="{{ asset('assets/images/icons/ic-information.svg') }}" alt="info"
                             style="width:15px; height:15px; ">
                     </div>
                     <div>
@@ -56,7 +58,7 @@
                 </li>
                 <li class="mb-3 d-flex align-items-start gap-3">
                     <div>
-                        <img src="{{ asset('assets/icons/ic-information.svg') }}" alt="info"
+                        <img src="{{ asset('assets/images/icons/ic-information.svg') }}" alt="info"
                             style="width:15px; height:15px; ">
                     </div>
                     <div>

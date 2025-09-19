@@ -13,39 +13,42 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
 Route::get('/', function () {
     return view('welcome');
 });
 
 Route::get('/category-run', function () {
-    return view('category-run');
+    return view('app.category-run');
 });
 
 Route::get('/login-page', function () {
-    return view('auth.login-page');
+    return view('app.auth.login-page');
 })->name('login-page');
 
 Route::get('/register-page', function () {
-    return view('auth.register-page');
+    return view('app.auth.register-page');
 })->name('register-page');
 
 Route::get('/registration-one', function () {
-    return view('registration.registration-one');
+    return view('app.registration.registration-one');
 })->name('registration-one');
 
 Route::get('/registration-two', function () {
-    return view('registration.registration-two');
+    return view('app.registration.registration-two');
 })->name('registration-two');
 
 Route::get('/registration-three', function () {
-    return view('registration.registration-three');
+    return view('app.registration.registration-three');
 })->name('registration-three');
 
 Route::get('/data-confirmation', function () {
-    return view('registration.data-confirmation');
+    return view('app.registration.data-confirmation');
 })->name('data-confirmation');
 
 Route::get('terms-and-conditions', function () {
-    return view('terms-and-conditions');
+    return view('app.terms-and-conditions');
 })->name('terms-and-conditions');
+
+Route::get('payment-method', function () {
+    return view('app.payment-method');
+})->name('payment-method');
