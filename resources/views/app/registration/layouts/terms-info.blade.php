@@ -1,5 +1,4 @@
 <!-- Right: Terms & Conditions Info -->
-
 <div class="col-lg-4 col-12">
     <div class="card shadow-sm mb-4 p-4" style="border-radius: 16px">
         <div class="card-body p-0">

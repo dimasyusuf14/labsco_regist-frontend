@@ -43,7 +43,6 @@
             </div>
         </div>
 
-
         <div class="row g-4">
             <!-- Left: Form -->
             <div class="col-lg-8 col-12">

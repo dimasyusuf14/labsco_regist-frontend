@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link rel="stylesheet" href="css/style.css" />
+        <link
+            rel="stylesheet"
+            href="../../../../public/assets/css/custom.css"
+        />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+            crossorigin="anonymous"
+        />
+        <title>Document</title>
+    </head>
+
+    <body>
+        <main id="main">
+            <div id="card-navigation" class="">
+                <div class="card-nav-item">
+                    <button type="button" class="card-nav-btn">
+                        <span>1</span>
+                    </button>
+                    <p class="card-nav-label">Data Diri</p>
+                </div>
+
+                <div class="card-nav-item   ">
+                    <button type="button" class="card-nav-btn">
+                        <span>2</span>
+                    </button>
+                    <p class="card-nav-label">Kontak Darurat &amp; Medis</p>
+                </div>
+
+                <div class="card-nav-item active">
+                    <button type="button" class="card-nav-btn">
+                        <span>3</span>
+                    </button>
+                    <p class="card-nav-label active">Racepack</p>
+                </div>
+
+                <div class="card-nav-item">
+                    <button type="button" class="card-nav-btn">
+                        <span>4</span>
+                    </button>
+                    <p class="card-nav-label">Konfirmasi Data</p>
+                </div>
+            </div>
+
+            <section id="card">
+                <div
+                    class="card mb-4 py-3 text-center"
+                    style="border-radius: 16px"
+                >
+                    <h3 class="fw-bold mb-1" style="color: #375ad9">
+                        Participant: 1/4
+                    </h3>
+                </div>
+            </section>
+
+            <section id="card">
+                <form id="card-body">
+                    <div class="card-title">
+                        <h2 class="title lg">Run Information</h2>
+                        <p class="description">
+                            Please fill in the form below to provide your race
+                            information such as race pack and others.<br />If there
+                            is an asterisk <span class="text-danger">*</span>,
+                            it means the field is required.
+                        </p>
+                    </div>
+                            <!-- Running Shirt Type -->
+                            <div class="mb-3">
+                                <label
+                                    class="form-label fw-semibold"
+                                    style="
+                                        font-size: 16px;
+                                        font-weight: 500;
+                                        color: #000000;
+                                    "
+                                >
+                                    Select Running Shirt Type
+                                    <span class="text-danger">*</span>
+                                </label>
+                                <div class="d-flex gap-4">
+                                    <div class="form-check">
+                                        <input
+                                            class="form-check-input"
+                                            type="radio"
+                                            name="shirtType"
+                                            id="shirtMen"
+                                            value="men"
+                                        />
+                                        <label
+                                            class="form-check-label"
+                                            for="shirtMen"
+                                            >Men</label
+                                        >
+                                    </div>
+                                    <div class="form-check">
+                                        <input
+                                            class="form-check-input"
+                                            type="radio"
+                                            name="shirtType"
+                                            id="shirtWomen"
+                                            value="women"
+                                        />
+                                        <label
+                                            class="form-check-label"
+                                            for="shirtWomen"
+                                            >Women</label
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Size Chart & Size Options (Initially Hidden) -->
+                            <div id="sizeChartWrapper" class="mb-3 d-none">
+                                <div class="mb-3 text-start">
+                                    <img
+                                        src="../../../../public/assets/images/example-sizechart.png"
+                                        alt="Size Chart"
+                                        class="img-fluid rounded"
+                                        style="
+                                            max-width: 225px;
+                                            cursor: pointer;
+                                        "
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#sizeChartModal"
+                                    />
+                                    <a
+                                        href="#"
+                                        class="d-block mt-2 text-primary"
+                                        style="font-size: 13px"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#sizeChartModal"
+                                    >
+                                        Click on the image to see bigger size
+                                    </a>
+                                </div>
+
+                                <!-- Modal Size Chart -->
+                                <div
+                                    class="modal fade"
+                                    id="sizeChartModal"
+                                    tabindex="-1"
+                                    aria-labelledby="sizeChartModalLabel"
+                                    aria-hidden="true"
+                                >
+                                    <div
+                                        class="modal-dialog modal-dialog-centered modal-md"
+                                    >
+                                        <div class="modal-content">
+                                            <div class="modal-header border-0">
+                                                <h5
+                                                    class="modal-title"
+                                                    id="sizeChartModalLabel"
+                                                >
+                                                    Size Chart
+                                                </h5>
+                                                <button
+                                                    type="button"
+                                                    class="btn-close"
+                                                    data-bs-dismiss="modal"
+                                                    aria-label="Close"
+                                                ></button>
+                                            </div>
+                                            <div class="modal-body text-center">
+                                                <img
+                                                    src="../../../../public/assets/images/example-sizechart.png"
+                                                    alt="Size Chart"
+                                                    class="img-fluid rounded"
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Men Sizes -->
+                                <div id="sizeMen" class="d-none">
+                                    <label class="form-label fw-semibold">
+                                        Select Shirt Size (Men)
+                                        <span class="text-danger">*</span>
+                                    </label>
+                                    <div class="d-flex flex-column gap-2">
+                                        <div class="form-check">
+                                            <input
+                                                class="form-check-input"
+                                                type="radio"
+                                                name="shirtSizeMen"
+                                                id="menS"
+                                                value="S"
+                                            />
+                                            <label
+                                                class="form-check-label"
+                                                for="menS"
+                                                >S</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input
+                                                class="form-check-input"
+                                                type="radio"
+                                                name="shirtSizeMen"
+                                                id="menM"
+                                                value="M"
+                                            />
+                                            <label
+                                                class="form-check-label"
+                                                for="menM"
+                                                >M</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input
+                                                class="form-check-input"
+                                                type="radio"
+                                                name="shirtSizeMen"
+                                                id="menL"
+                                                value="L"
+                                            />
+                                            <label
+                                                class="form-check-label"
+                                                for="menL"
+                                                >L</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input
+                                                class="form-check-input"
+                                                type="radio"
+                                                name="shirtSizeMen"
+                                                id="menXL"
+                                                value="XL"
+                                            />
+                                            <label
+                                                class="form-check-label"
+                                                for="menXL"
+                                                >XL</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input
+                                                class="form-check-input"
+                                                type="radio"
+                                                name="shirtSizeMen"
+                                                id="men2XL"
+                                                value="2XL"
+                                            />
+                                            <label
+                                                class="form-check-label"
+                                                for="men2XL"
+                                                >2XL</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input
+                                                class="form-check-input"
+                                                type="radio"
+                                                name="shirtSizeMen"
+                                                id="men3XL"
+                                                value="3XL"
+                                            />
+                                            <label
+                                                class="form-check-label"
+                                                for="men3XL"
+                                                >3XL</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input
+                                                class="form-check-input"
+                                                type="radio"
+                                                name="shirtSizeMen"
+                                                id="men4XL"
+                                                value="4XL"
+                                            />
+                                            <label
+                                                class="form-check-label"
+                                                for="men4XL"
+                                                >4XL</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Women Sizes -->
+                                <div id="sizeWomen" class="d-none">
+                                    <label class="form-label fw-semibold">
+                                        Select Shirt Size (Women)
+                                        <span class="text-danger">*</span>
+                                    </label>
+                                    <div class="d-flex flex-column gap-2">
+                                        <div class="form-check">
+                                            <input
+                                                class="form-check-input"
+                                                type="radio"
+                                                name="shirtSizeWomen"
+                                                id="womenS"
+                                                value="S"
+                                            />
+                                            <label
+                                                class="form-check-label"
+                                                for="womenS"
+                                                >S</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input
+                                                class="form-check-input"
+                                                type="radio"
+                                                name="shirtSizeWomen"
+                                                id="womenM"
+                                                value="M"
+                                            />
+                                            <label
+                                                class="form-check-label"
+                                                for="womenM"
+                                                >M</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input
+                                                class="form-check-input"
+                                                type="radio"
+                                                name="shirtSizeWomen"
+                                                id="womenL"
+                                                value="L"
+                                            />
+                                            <label
+                                                class="form-check-label"
+                                                for="womenL"
+                                                >L</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input
+                                                class="form-check-input"
+                                                type="radio"
+                                                name="shirtSizeWomen"
+                                                id="womenXL"
+                                                value="XL"
+                                            />
+                                            <label
+                                                class="form-check-label"
+                                                for="womenXL"
+                                                >XL</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Running Community Name -->
+                            <div class="mb-3">
+                                <label
+                                    for="communityName"
+                                    class="form-label fw-semibold"
+                                    style="
+                                        font-size: 16px;
+                                        font-weight: 500;
+                                        color: #000000;
+                                    "
+                                >
+                                    Running Community Name
+                                    <span
+                                        class="text-muted ms-2"
+                                        style="font-size: 12px"
+                                    >
+                                        If any, please fill in correctly
+                                    </span>
+                                </label>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="communityName"
+                                    placeholder="Placeholder"
+                                />
+                            </div>
+
+                            <!-- Estimate Finish Time -->
+                            <div class="mb-3">
+                                <label
+                                    class="form-label fw-semibold"
+                                    style="
+                                        font-size: 16px;
+                                        font-weight: 500;
+                                        color: #000000;
+                                    "
+                                >
+                                    Estimate Finish Time
+                                    <span class="text-danger">*</span>
+                                </label>
+                                <span
+                                    class="text-primary d-block mb-2"
+                                    style="font-size: 12px"
+                                >
+                                    Cut of time 24k (5 Hour)
+                                </span>
+                                <div class="d-flex gap-3">
+                                    <div>
+                                        <label
+                                            for="finishHour"
+                                            class="form-label small"
+                                            >Hour</label
+                                        >
+                                        <input
+                                            type="number"
+                                            class="form-control"
+                                            id="finishHour"
+                                            placeholder="0"
+                                            min="0"
+                                        />
+                                    </div>
+                                    <div>
+                                        <label
+                                            for="finishMinute"
+                                            class="form-label small"
+                                            >Minute</label
+                                        >
+                                        <input
+                                            type="number"
+                                            class="form-control"
+                                            id="finishMinute"
+                                            placeholder="0"
+                                            min="0"
+                                            max="59"
+                                        />
+                                    </div>
+                                </div>
+                        </form>
+
+                    <div class="card-button on-side">
+                        <a href="registration-two.html" class="btn btn-outline-secondary">
+                            <img
+                                src="../../../../public/assets/images/icons/ic-arrow-back.svg"
+                                alt="Back"
+                                style="width: 13px; height: 11px"
+                            />
+                            Back
+                        </a>
+                        <a href="data-confirmation.html" class="btn btn-primary">
+                            Next
+                            <img
+                                src="../../../../public/assets/images/icons/ic-arrow-next.svg"
+                                alt="Next"
+                                style="width: 13px; height: 11px"
+                            />
+                        </a>
+                    </div>
+                </form>
+            </section>
+        </main>
+
+        <!-- Bootstrap JS & Icons -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+        />
+
+        <!-- Script to Toggle Size Chart -->
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const menRadio = document.getElementById("shirtMen");
+                const womenRadio = document.getElementById("shirtWomen");
+                const sizeChartWrapper =
+                    document.getElementById("sizeChartWrapper");
+                const sizeMen = document.getElementById("sizeMen");
+                const sizeWomen = document.getElementById("sizeWomen");
+
+                function toggleSizeChart() {
+                    sizeChartWrapper.classList.remove("d-none");
+                    if (menRadio.checked) {
+                        sizeMen.classList.remove("d-none");
+                        sizeWomen.classList.add("d-none");
+                    } else if (womenRadio.checked) {
+                        sizeWomen.classList.remove("d-none");
+                        sizeMen.classList.add("d-none");
+                    } else {
+                        sizeChartWrapper.classList.add("d-none");
+                    }
+                }
+
+                menRadio.addEventListener("change", toggleSizeChart);
+                womenRadio.addEventListener("change", toggleSizeChart);
+            });
+        </script>
+    </body>
+</html>
