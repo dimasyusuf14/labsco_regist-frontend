@@ -16,431 +16,466 @@
     </head>
 
     <body>
-        <main id="main">
-            <div class="row g-0">
-                <!-- Left Section -->
-                <div class="col-lg-8 col-12 p-4">
-                    <!-- Participant -->
-                    <div id="card-body" class="mb-4">
-                        <div class="card-title">
-                            <h2 class="title lg">Participant</h2>
+        <div class="container-fluid">
+            <main id="main" class="registration mx-auto px-4">
+                <div class="row g-4">
+                    <!-- Left Section -->
+                    <div class="col-lg-8 col-12">
+                        <!-- Participant -->
+                        <div id="card-body" class="mb-4">
+                            <div class="card-title">
+                                <h2 class="title lg">Participant</h2>
+                            </div>
+                            <div class="input-review-wrapper">
+                                <div class="input-review">
+                                    <p>
+                                        Register as<br /><span
+                                            class="fw-semibold"
+                                            >sultan@jordy.com - Jordy
+                                            <span
+                                                class="text-danger"
+                                                style="font-weight: 600"
+                                                >(4536)</span
+                                            ></span
+                                        >
+                                    </p>
+                                </div>
+                                <div class="input-review">
+                                    <p>
+                                        Register as<br /><span
+                                            class="fw-semibold"
+                                            >fahril@anggaara.com - Angga
+                                            <span
+                                                class="text-danger"
+                                                style="font-weight: 600"
+                                                >(1234)</span
+                                            ></span
+                                        >
+                                    </p>
+                                </div>
+                                <div class="input-review">
+                                    <p>
+                                        Register as<br /><span
+                                            class="fw-semibold"
+                                            >ilham@ramadan.com - Ilham
+                                            <span
+                                                class="text-danger"
+                                                style="font-weight: 600"
+                                                >(2323)</span
+                                            ></span
+                                        >
+                                    </p>
+                                </div>
+                                <div class="input-review">
+                                    <p>
+                                        Register as<br /><span
+                                            class="fw-semibold"
+                                            >irvan@pramana.com - Irvan
+                                            <span
+                                                class="text-danger"
+                                                style="font-weight: 600"
+                                                >(1253)</span
+                                            ></span
+                                        >
+                                    </p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="input-review-wrapper">
-                            <div class="input-review">
-                                <p>
-                                    Register as<br /><span class="fw-semibold"
-                                        >sultan@jordy.com - Jordy
-                                        <span
-                                            class="text-danger"
-                                            style="font-weight: 600"
-                                            >(4536)</span
-                                        ></span
-                                    >
-                                </p>
-                            </div>
-                            <div class="input-review">
-                                <p>
-                                    Register as<br /><span class="fw-semibold"
-                                        >fahril@anggaara.com - Angga
-                                        <span
-                                            class="text-danger"
-                                            style="font-weight: 600"
-                                            >(1234)</span
-                                        ></span
-                                    >
-                                </p>
-                            </div>
-                            <div class="input-review">
-                                <p>
-                                    Register as<br /><span class="fw-semibold"
-                                        >ilham@ramadan.com - Ilham
-                                        <span
-                                            class="text-danger"
-                                            style="font-weight: 600"
-                                            >(2323)</span
-                                        ></span
-                                    >
-                                </p>
-                            </div>
-                            <div class="input-review">
-                                <p>
-                                    Register as<br /><span class="fw-semibold"
-                                        >irvan@pramana.com - Irvan
-                                        <span
-                                            class="text-danger"
-                                            style="font-weight: 600"
-                                            >(1253)</span
-                                        ></span
-                                    >
-                                </p>
-                            </div>
-                        </div>
-                    </div>
 
-                    <!-- Payment Method -->
-                    <div id="card-body">
-                        <div class="card-title">
-                            <h2 class="title lg">Payment Method</h2>
-                        </div>
-                        <!-- Transfer Bank -->
-                        <div
-                            class="card shadow-sm mb-3"
-                            style="border-radius: 12px; background: #f4f7ff"
-                        >
-                            <div
-                                class="form-check p-0 d-flex align-items-center flex-row"
-                                style="min-height: 56px"
-                            >
-                                <input
-                                    class="form-check-input payment-radio ms-3 me-3"
-                                    type="radio"
-                                    name="paymentMethod"
-                                    id="transferBank"
-                                    data-bs-toggle="collapse"
-                                    data-bs-target="#collapseTransfer"
-                                    style="margin-top: 0"
-                                />
-                                <label
-                                    class="form-check-label d-flex justify-content-between align-items-center flex-grow-1 p-3 m-0"
-                                    for="transferBank"
-                                    style="font-size: 15px; font-weight: 500"
-                                >
-                                    <span>Transfer Bank</span>
-                                    <span>
-                                        <img
-                                            src="../../../public/assets/images/bri.png"
-                                            alt="BRI"
-                                            width="40"
-                                        />
-                                        <img
-                                            src="../../../public/assets/images/bni.png"
-                                            alt="BNI"
-                                            width="40"
-                                        />
-                                    </span>
-                                </label>
+                        <!-- Payment Method -->
+                        <div id="card-body">
+                            <div class="card-title">
+                                <h2 class="title lg">Payment Method</h2>
                             </div>
+                            <!-- Transfer Bank -->
                             <div
-                                class="collapse px-3 pb-3"
-                                id="collapseTransfer"
+                                class="card shadow-sm mb-3 payment-method-card"
                             >
-                                <div class="row g-3 mt-2">
-                                    <div class="col-4">
-                                        <div class="card text-center p-2">
+                                <div
+                                    class="form-check p-0 d-flex align-items-center flex-row payment-method-form-check"
+                                >
+                                    <input
+                                        class="form-check-input payment-radio ms-3 me-3 payment-method-radio"
+                                        type="radio"
+                                        name="paymentMethod"
+                                        id="transferBank"
+                                        data-bs-toggle="collapse"
+                                        data-bs-target="#collapseTransfer"
+                                    />
+                                    <label
+                                        class="form-check-label d-flex justify-content-between align-items-center flex-grow-1 p-3 m-0 payment-method-label"
+                                        for="transferBank"
+                                    >
+                                        <span>Bank Transfer</span>
+                                        <span>
                                             <img
                                                 src="../../../public/assets/images/bri.png"
                                                 alt="BRI"
-                                                width="60"
+                                                width="40"
                                             />
-                                        </div>
-                                    </div>
-                                    <div class="col-4">
-                                        <div class="card text-center p-2">
                                             <img
                                                 src="../../../public/assets/images/bni.png"
                                                 alt="BNI"
-                                                width="60"
+                                                width="40"
                                             />
+                                        </span>
+                                    </label>
+                                </div>
+                                <div
+                                    class="collapse px-3 pb-3"
+                                    id="collapseTransfer"
+                                >
+                                    <div class="row g-3 mt-2">
+                                        <div class="col-4">
+                                            <div id="card-item-payment">
+                                                <img
+                                                    src="../../../public/assets/images/bri.png"
+                                                    alt="BRI"
+                                                />
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div id="card-item-payment">
+                                                <img
+                                                    src="../../../public/assets/images/bni.png"
+                                                    alt="BNI"
+                                                />
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <!-- E-Wallet -->
-                        <div
-                            class="card shadow-sm mb-3"
-                            style="border-radius: 12px; background: #f4f7ff"
-                        >
+                            <!-- E-Wallet -->
                             <div
-                                class="form-check p-0 d-flex align-items-center flex-row"
-                                style="min-height: 56px"
+                                class="card shadow-sm mb-3 payment-method-card"
                             >
-                                <input
-                                    class="form-check-input payment-radio ms-3 mt-3"
-                                    type="radio"
-                                    name="paymentMethod"
-                                    id="ewallet"
-                                    data-bs-toggle="collapse"
-                                    data-bs-target="#collapseEwallet"
-                                />
-                                <label
-                                    class="form-check-label d-flex justify-content-between align-items-center w-100 p-3"
-                                    for="ewallet"
-                                    style="font-size: 15px; font-weight: 500"
+                                <div
+                                    class="form-check p-0 d-flex align-items-center flex-row payment-method-form-check"
                                 >
-                                    <span>E-Wallet</span>
-                                    <span>
-                                        <img
-                                            src="../../../public/assets/images/gopay.png"
-                                            alt="GoPay"
-                                            width="40"
-                                        />
-                                        <img
-                                            src="../../../public/assets/images/gopay.png"
-                                            alt="Gopay"
-                                            width="40"
-                                        />
-                                        <img
-                                            src="../../../public/assets/images/gopay.png"
-                                            alt="Gopay"
-                                            width="40"
-                                        />
-                                    </span>
-                                </label>
-                            </div>
-                            <div
-                                class="collapse px-3 pb-3"
-                                id="collapseEwallet"
-                            >
-                                <div class="row g-3 mt-2">
-                                    <div class="col-4">
-                                        <div class="card text-center p-2">
+                                    <input
+                                        class="form-check-input payment-radio ms-3 me-3 payment-method-radio"
+                                        type="radio"
+                                        name="paymentMethod"
+                                        id="ewallet"
+                                        data-bs-toggle="collapse"
+                                        data-bs-target="#collapseEwallet"
+                                    />
+                                    <label
+                                        class="form-check-label d-flex justify-content-between align-items-center flex-grow-1 p-3 m-0 payment-method-label"
+                                        for="ewallet"
+                                    >
+                                        <span>E-Wallet</span>
+                                        <span>
                                             <img
                                                 src="../../../public/assets/images/gopay.png"
                                                 alt="GoPay"
-                                                width="60"
+                                                width="40"
                                             />
-                                        </div>
-                                    </div>
-                                    <div class="col-4">
-                                        <div class="card text-center p-2">
                                             <img
                                                 src="../../../public/assets/images/gopay.png"
                                                 alt="Gopay"
-                                                width="60"
+                                                width="40"
                                             />
-                                        </div>
-                                    </div>
-                                    <div class="col-4">
-                                        <div class="card text-center p-2">
                                             <img
                                                 src="../../../public/assets/images/gopay.png"
                                                 alt="Gopay"
-                                                width="60"
+                                                width="40"
                                             />
+                                        </span>
+                                    </label>
+                                </div>
+                                <div
+                                    class="collapse px-3 pb-3"
+                                    id="collapseEwallet"
+                                >
+                                    <div class="row g-3 mt-2">
+                                        <div class="col-4">
+                                            <div id="card-item-payment">
+                                                <img
+                                                    src="../../../public/assets/images/gopay.png"
+                                                    alt="GoPay"
+                                                />
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div id="card-item-payment">
+                                                <img
+                                                    src="../../../public/assets/images/gopay.png"
+                                                    alt="OVO"
+                                                />
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div id="card-item-payment">
+                                                <img
+                                                    src="../../../public/assets/images/gopay.png"
+                                                    alt="DANA"
+                                                />
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div id="card-item-payment">
+                                                <img
+                                                    src="../../../public/assets/images/gopay.png"
+                                                    alt="DANA"
+                                                />
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <!-- QRIS -->
-                        <div
-                            class="card shadow-sm mb-3"
-                            style="border-radius: 12px; background: #f4f7ff"
-                        >
+                            <!-- QRIS -->
                             <div
-                                class="form-check p-0 d-flex align-items-center flex-row"
-                                style="min-height: 56px"
+                                class="card shadow-sm mb-3 payment-method-card"
                             >
-                                <input
-                                    class="form-check-input payment-radio ms-3 mt-3"
-                                    type="radio"
-                                    name="paymentMethod"
-                                    id="qris"
-                                    data-bs-toggle="collapse"
-                                    data-bs-target="#collapseQris"
-                                />
-                                <label
-                                    class="form-check-label d-flex justify-content-between align-items-center w-100 p-3"
-                                    for="qris"
-                                    style="font-size: 15px; font-weight: 500"
+                                <div
+                                    class="form-check p-0 d-flex align-items-center flex-row payment-method-form-check"
                                 >
-                                    <span>QRIS</span>
-                                    <span>
-                                        <img
-                                            src="../../../public/assets/images/qris.png"
-                                            alt="QRIS"
-                                            width="40"
-                                        />
-                                    </span>
-                                </label>
-                            </div>
-                            <div class="collapse px-3 pb-3" id="collapseQris">
-                                <div class="row g-3 mt-2">
-                                    <div class="col-6 col-md-4">
-                                        <div class="card text-center p-2">
+                                    <input
+                                        class="form-check-input payment-radio ms-3 me-3 payment-method-radio"
+                                        type="radio"
+                                        name="paymentMethod"
+                                        id="qris"
+                                        data-bs-toggle="collapse"
+                                        data-bs-target="#collapseQris"
+                                    />
+                                    <label
+                                        class="form-check-label d-flex justify-content-between align-items-center flex-grow-1 p-3 m-0 payment-method-label"
+                                        for="qris"
+                                    >
+                                        <span>QRIS</span>
+                                        <span>
                                             <img
                                                 src="../../../public/assets/images/qris.png"
                                                 alt="QRIS"
-                                                width="60"
+                                                width="40"
                                             />
+                                        </span>
+                                    </label>
+                                </div>
+                                <div
+                                    class="collapse px-3 pb-3"
+                                    id="collapseQris"
+                                >
+                                    <div class="row g-3 mt-2">
+                                        <div class="col-6 col-md-4">
+                                            <div id="card-item-payment">
+                                                <img
+                                                    src="../../../public/assets/images/qris.png"
+                                                    alt="QRIS"
+                                                />
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- Script supaya hanya satu collapse terbuka -->
-                    <script>
-                        document
-                            .querySelectorAll(".payment-radio")
-                            .forEach((radio) => {
-                                radio.addEventListener("change", function () {
-                                    document
-                                        .querySelectorAll(".collapse")
-                                        .forEach((c) => {
-                                            if (
-                                                c.id !==
-                                                this.dataset.bsTarget.replace(
-                                                    "#",
-                                                    ""
-                                                )
-                                            ) {
-                                                new bootstrap.Collapse(c, {
-                                                    hide: true,
-                                                });
+                        <!-- Script to ensure only one collapse is open -->
+                        <script>
+                            document.addEventListener(
+                                "DOMContentLoaded",
+                                function () {
+                                    const radios =
+                                        document.querySelectorAll(
+                                            ".payment-radio"
+                                        );
+
+                                    radios.forEach((radio) => {
+                                        radio.addEventListener(
+                                            "change",
+                                            function () {
+                                                // Only process if this radio is active/selected
+                                                if (this.checked) {
+                                                    // Close all collapses first
+                                                    const allCollapses = [
+                                                        "collapseTransfer",
+                                                        "collapseEwallet",
+                                                        "collapseQris",
+                                                    ];
+
+                                                    allCollapses.forEach(
+                                                        (collapseId) => {
+                                                            const collapse =
+                                                                document.getElementById(
+                                                                    collapseId
+                                                                );
+                                                            if (collapse) {
+                                                                const bsCollapse =
+                                                                    bootstrap.Collapse.getInstance(
+                                                                        collapse
+                                                                    );
+                                                                if (
+                                                                    bsCollapse
+                                                                ) {
+                                                                    bsCollapse.hide();
+                                                                }
+                                                            }
+                                                        }
+                                                    );
+
+                                                    // Open only the collapse that corresponds to the active radio
+                                                    const targetId =
+                                                        this.getAttribute(
+                                                            "data-bs-target"
+                                                        );
+                                                    if (targetId) {
+                                                        const targetCollapse =
+                                                            document.querySelector(
+                                                                targetId
+                                                            );
+                                                        if (targetCollapse) {
+                                                            // Wait a moment for the close animation to finish, then open the new one
+                                                            setTimeout(() => {
+                                                                new bootstrap.Collapse(
+                                                                    targetCollapse,
+                                                                    {
+                                                                        show: true,
+                                                                    }
+                                                                );
+                                                            }, 150);
+                                                        }
+                                                    }
+                                                }
                                             }
-                                        });
-                                });
-                            });
-                    </script>
-                </div>
+                                        );
+                                    });
 
-                <!-- Right Section -->
-                <div class="col-lg-4 col-12 p-4">
-                    <!-- Billing Details -->
-                    <div id="card-body" class="mb-4">
-                        <div class="card-title">
-                            <h2 class="title lg">Billing Details</h2>
-                            <p class="description">
-                                Silahkan bayar sesuai angka yang tertera di
-                                bawah ini.
-                            </p>
-                        </div>
-                        <table>
-                            <tbody>
-                                <tr>
-                                    <th>Kategori Event</th>
-                                    <td>
-                                        <div>
-                                            Regular 5K
-                                            <span class="fw-bold">1</span>
-                                        </div>
-                                        <div>
-                                            Regular 10K
-                                            <span class="fw-bold">3</span>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>Jumlah</th>
-                                    <td class="fw-bold">4 Orang</td>
-                                </tr>
-                                <tr>
-                                    <th>Biaya</th>
-                                    <td>Rp1.220.000</td>
-                                </tr>
-                                <tr>
-                                    <th>Diskon Voucher</th>
-                                    <td class="text-danger">- Rp100.000</td>
-                                </tr>
-                                <tr>
-                                    <th class="total">Subtotal</th>
-                                    <td class="total" style="color: #22c55e">
-                                        Rp1.120.000
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                                    // Payment item selection functionality
+                                    const paymentItems =
+                                        document.querySelectorAll(
+                                            "#card-item-payment"
+                                        );
+                                    let selectedPaymentItem = null;
+
+                                    paymentItems.forEach((item) => {
+                                        item.addEventListener(
+                                            "click",
+                                            function () {
+                                                // Remove selected class from all items
+                                                paymentItems.forEach(
+                                                    (paymentItem) => {
+                                                        paymentItem.classList.remove(
+                                                            "selected"
+                                                        );
+                                                    }
+                                                );
+
+                                                // Add selected class to clicked item
+                                                this.classList.add("selected");
+                                                selectedPaymentItem = this;
+
+                                                // Get the payment method info
+                                                const img =
+                                                    this.querySelector("img");
+                                                const altText = img
+                                                    ? img.alt
+                                                    : "";
+
+                                                console.log(
+                                                    "Selected payment method:",
+                                                    altText
+                                                );
+                                            }
+                                        );
+                                    });
+                                }
+                            );
+                        </script>
                     </div>
 
-                    <!-- Voucher -->
-                    <div id="card-body" class="mb-4">
-                        <div class="input-group">
-                            <div
-                                class="d-flex align-items-center justify-content-center p-0 m-0"
+                    <!-- Right Section -->
+                    <div class="col-lg-4 col-12">
+                        <!-- Billing Details -->
+                        <div id="card-body" class="mb-4">
+                            <div class="card-title">
+                                <h2 class="title lg">Billing Details</h2>
+                                <p class="description">
+                                    Please pay according to the amount shown
+                                    below.
+                                </p>
+                            </div>
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <th>Event Category</th>
+                                        <td>
+                                            <div>
+                                                Regular 10K
+                                                <span class="fw-bold">3</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>Quantity</th>
+                                        <td class="fw-bold">4 People</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Cost</th>
+                                        <td>Rp1.220.000</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Voucher Discount</th>
+                                        <td class="text-danger">- Rp100.000</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="total">Subtotal</th>
+                                        <td
+                                            class="total"
+                                            style="color: #22c55e"
+                                        >
+                                            Rp1.120.000
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Voucher -->
+                        <div class="voucher-card">
+                            <div class="voucher-container">
+                                <input
+                                    type="text"
+                                    class="form-control voucher-input"
+                                    placeholder="Enter Voucher Code"
+                                />
+                                <button
+                                    class="btn btn-outline-secondary voucher-btn"
+                                >
+                                    SAVE
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Pay Button -->
+                        <div class="card-button single">
+                            <a
+                                href="payment-instruction.html"
+                                class="btn w-100 fw-bold py-2"
                                 style="
-                                    background: #e3eafd;
-                                    border-radius: 8px;
-                                    width: 40px;
-                                    height: 40px;
-                                    min-width: 40px;
-                                    min-height: 40px;
-                                    max-width: 40px;
-                                    max-height: 40px;
-                                    box-sizing: border-box;
+                                    background: #5a35f4;
+                                    border: none;
+                                    border-radius: 12px;
+                                    font-size: 18px;
+                                    font-weight: 700;
+                                    color: #fff;
                                 "
                             >
-                                <img
-                                    src="../../../public/assets/images/icons/ic-voucher.svg"
-                                    alt="Voucher"
-                                    style="
-                                        width: 35px;
-                                        height: 35px;
-                                        display: block;
-                                    "
-                                />
-                            </div>
-                            <input
-                                type="text"
-                                class="form-control"
-                                placeholder="Masukan Kode Voucher"
-                            />
-                            <button class="btn btn-outline-secondary">
-                                SIMPAN
-                            </button>
+                                Pay with Virtual Account
+                            </a>
                         </div>
                     </div>
-
-                    <!-- Pay Button -->
-                    <div class="card-button single">
-                        <button
-                            class="btn w-100 fw-bold py-2"
-                            style="
-                                background: #5a35f4;
-                                border: none;
-                                border-radius: 12px;
-                                font-size: 18px;
-                                font-weight: 700;
-                                color: #fff;
-                            "
-                        >
-                            Bayar dengan Virtual Account
-                        </button>
-                    </div>
                 </div>
-            </div>
-        </main>
+            </main>
 
-        <!-- Bootstrap JS & Icons -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-        <link
-            rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
-        />
-
-        <!-- Script: Only expand the selected payment method card, others collapse -->
-        <script>
-            document.addEventListener("DOMContentLoaded", function () {
-                const radios = document.querySelectorAll(".payment-radio");
-                const collapseMap = {
-                    transferBank: document.getElementById("collapseTransfer"),
-                    ewallet: document.getElementById("collapseEwallet"),
-                    qris: document.getElementById("collapseQris"),
-                };
-                radios.forEach((radio) => {
-                    radio.addEventListener("change", function () {
-                        Object.entries(collapseMap).forEach(
-                            ([key, collapse]) => {
-                                if (collapse) {
-                                    if (radio.id === key) {
-                                        new bootstrap.Collapse(collapse, {
-                                            show: true,
-                                        });
-                                    } else {
-                                        new bootstrap.Collapse(collapse, {
-                                            hide: true,
-                                        });
-                                    }
-                                }
-                            }
-                        );
-                    });
-                });
-            });
-        </script>
+            <!-- Bootstrap JS & Icons -->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+            <link
+                rel="stylesheet"
+                href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+            />
+        </div>
     </body>
 </html>

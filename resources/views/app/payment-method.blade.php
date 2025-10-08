@@ -128,13 +128,40 @@
 
                 <!-- Script supaya hanya satu collapse terbuka -->
                 <script>
-                    document.querySelectorAll('.payment-radio').forEach(radio => {
-                        radio.addEventListener('change', function() {
-                            document.querySelectorAll('.collapse').forEach(c => {
-                                if (c.id !== this.dataset.bsTarget.replace('#', '')) {
-                                    new bootstrap.Collapse(c, {
-                                        hide: true
+                    document.addEventListener('DOMContentLoaded', function() {
+                        const radios = document.querySelectorAll('.payment-radio');
+
+                        radios.forEach(radio => {
+                            radio.addEventListener('change', function() {
+                                // Hanya proses jika radio ini yang aktif/terpilih
+                                if (this.checked) {
+                                    // Tutup semua collapse terlebih dahulu
+                                    const allCollapses = ['collapseTransfer', 'collapseEwallet',
+                                    'collapseQris'];
+
+                                    allCollapses.forEach(collapseId => {
+                                        const collapse = document.getElementById(collapseId);
+                                        if (collapse) {
+                                            const bsCollapse = bootstrap.Collapse.getInstance(collapse);
+                                            if (bsCollapse) {
+                                                bsCollapse.hide();
+                                            }
+                                        }
                                     });
+
+                                    // Buka hanya collapse yang sesuai dengan radio yang aktif
+                                    const targetId = this.getAttribute('data-bs-target');
+                                    if (targetId) {
+                                        const targetCollapse = document.querySelector(targetId);
+                                        if (targetCollapse) {
+                                            // Tunggu sebentar agar animasi tutup selesai, baru buka yang baru
+                                            setTimeout(() => {
+                                                new bootstrap.Collapse(targetCollapse, {
+                                                    show: true
+                                                });
+                                            }, 150);
+                                        }
+                                    }
                                 }
                             });
                         });
@@ -202,33 +229,4 @@
             </div>
         </div>
     </div>
-
-    <!-- Script: Only expand the selected payment method card, others collapse -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const radios = document.querySelectorAll('.payment-radio');
-            const collapseMap = {
-                transferBank: document.getElementById('collapseTransfer'),
-                ewallet: document.getElementById('collapseEwallet'),
-                qris: document.getElementById('collapseQris')
-            };
-            radios.forEach(radio => {
-                radio.addEventListener('change', function() {
-                    Object.entries(collapseMap).forEach(([key, collapse]) => {
-                        if (collapse) {
-                            if (radio.id === key) {
-                                new bootstrap.Collapse(collapse, {
-                                    show: true
-                                });
-                            } else {
-                                new bootstrap.Collapse(collapse, {
-                                    hide: true
-                                });
-                            }
-                        }
-                    });
-                });
-            });
-        });
-    </script>
 @endsection

@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="../../../public/assets/css/custom.css" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+            crossorigin="anonymous"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+        />
+        <title>Payment Instruction</title>
+    </head>
+
+    <body>
+        <div class="container-fluid">
+            <main id="main" class="registration mx-auto px-4">
+                <div class="row g-4">
+                    <!-- Left Section -->
+                    <div class="col-lg-7 col-12">
+                        <!-- Payment Instruction -->
+                        <div
+                            id="card-body"
+                            class="d-flex justify-content-between px-4 py-3 mb-4"
+                        >
+                            <div
+                                class="d-flex justify-content-between align-items-center w-100"
+                            >
+                                <div>
+                                    <p class="text-muted mb-0">
+                                        Complete within
+                                    </p>
+                                </div>
+                                <div>
+                                    <h5
+                                        class="text-danger fw-bold mb-0"
+                                        id="countdown"
+                                    >
+                                        23 hours 59 minutes 40 seconds
+                                    </h5>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="card-body">
+                            <div>
+                                <div class="card-title">
+                                    <h2 class="title lg">
+                                        PAYMENT INSTRUCTIONS
+                                    </h2>
+                                </div>
+
+                                <div class="mb-3">
+                                    <p class="mb-2 fs-6 form-label">
+                                        Transfer to
+                                    </p>
+                                    <div
+                                        class="d-flex align-items-center gap-2 mb-1"
+                                    >
+                                        <span
+                                            class="badge bg-white text-primary px-2 py-1 fw-bold payment-instructions-badge"
+                                            >BRI</span
+                                        >
+                                        <span class="fs-6"
+                                            >BRI VIRTUAL ACCOUNT</span
+                                        >
+                                    </div>
+                                    <div
+                                        class="px-4 py-2 d-flex align-items-center justify-content-between p-3 rounded payment-instructions-container"
+                                    >
+                                        <span
+                                            class="fw-bold virtual-account-number"
+                                            >7006 4111 6969 8888</span
+                                        >
+                                        <button
+                                            class="btn btn-sm px-2 py-1 copy-button"
+                                            onclick="copyToClipboard('7006 4111 6969 8888')"
+                                        >
+                                            <img
+                                                src="../../../public/assets/images/icons/ic-copy.svg"
+                                                alt="copy"
+                                                style="
+                                                    width: 16px;
+                                                    height: 18px;
+                                                "
+                                            />
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <p class="mb-1 fs-6 form-label">
+                                        Total Payment
+                                    </p>
+                                    <div
+                                        class="d-flex align-items-center px-4 py-2 mb-2 payment-amount-container"
+                                    >
+                                        <h4 class="fw-bold mb-0 payment-amount">
+                                            Rp1.120.000
+                                        </h4>
+                                    </div>
+                                </div>
+
+                                <small class="payment-instruction-text"
+                                    >Just click the button below to make
+                                    payment.</small
+                                >
+
+                                <a
+                                    href="#"
+                                    class="btn w-100 fw-bold py-2 mt-2 mb-4 payment-status-button"
+                                >
+                                    <i class="bi bi-check-circle-fill me-2"></i>
+                                    Check Payment Status
+                                </a>
+                            </div>
+
+                            <!-- Payment Methods -->
+                            <div class="mb-4">
+                                <h5 class="mb-3 form-label">Payment Methods</h5>
+
+                                <div class="mb-3">
+                                    <button
+                                        class="btn btn-outline-secondary w-100 text-start p-3 d-flex justify-content-between align-items-center"
+                                        type="button"
+                                        data-bs-toggle="collapse"
+                                        data-bs-target="#transferAtm1"
+                                    >
+                                        <span>Transfer Via ATM</span>
+                                        <i class="bi bi-chevron-down"></i>
+                                    </button>
+                                    <div class="collapse" id="transferAtm1  ">
+                                        <div class="card card-body mt-2">
+                                            <ol class="mb-0">
+                                                <li>
+                                                    Masukkan kartu ATM dan PIN
+                                                    Anda
+                                                </li>
+                                                <li>Pilih menu "Transfer"</li>
+                                                <li>Pilih "Virtual Account"</li>
+                                                <li>
+                                                    Masukkan nomor Virtual
+                                                    Account:
+                                                    <strong
+                                                        >7006 4111 6969
+                                                        8888</strong
+                                                    >
+                                                </li>
+                                                <li>
+                                                    Masukkan jumlah pembayaran:
+                                                    <strong>Rp1.120.000</strong>
+                                                </li>
+                                                <li>Konfirmasi transaksi</li>
+                                                <li>
+                                                    Simpan struk sebagai bukti
+                                                    pembayaran
+                                                </li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <button
+                                        class="btn btn-outline-secondary w-100 text-start p-3 d-flex justify-content-between align-items-center"
+                                        type="button"
+                                        data-bs-toggle="collapse"
+                                        data-bs-target="#transferAtm2"
+                                    >
+                                        <span>Transfer via ATM</span>
+                                        <i class="bi bi-chevron-down"></i>
+                                    </button>
+                                    <div class="collapse" id="transferAtm2">
+                                        <div class="card card-body mt-2">
+                                            <ol class="mb-0">
+                                                <li>
+                                                    Insert your ATM card and PIN
+                                                </li>
+                                                <li>Select "Transfer" menu</li>
+                                                <li>
+                                                    Select "Virtual Account"
+                                                </li>
+                                                <li>
+                                                    Enter Virtual Account
+                                                    number:
+                                                    <strong
+                                                        >7006 4111 6969
+                                                        8888</strong
+                                                    >
+                                                </li>
+                                                <li>
+                                                    Enter payment amount:
+                                                    <strong>Rp1.120.000</strong>
+                                                </li>
+                                                <li>Confirm transaction</li>
+                                                <li>
+                                                    Save receipt as payment
+                                                    proof
+                                                </li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <button
+                                        class="btn btn-outline-secondary w-100 text-start p-3 d-flex justify-content-between align-items-center"
+                                        type="button"
+                                        data-bs-toggle="collapse"
+                                        data-bs-target="#transferAtm3"
+                                    >
+                                        <span>Transfer via ATM</span>
+                                        <i class="bi bi-chevron-down"></i>
+                                    </button>
+                                    <div class="collapse" id="transferAtm3">
+                                        <div class="card card-body mt-2">
+                                            <ol class="mb-0">
+                                                <li>
+                                                    Insert your ATM card and PIN
+                                                </li>
+                                                <li>Select "Transfer" menu</li>
+                                                <li>
+                                                    Select "Virtual Account"
+                                                </li>
+                                                <li>
+                                                    Enter Virtual Account
+                                                    number:
+                                                    <strong
+                                                        >7006 4111 6969
+                                                        8888</strong
+                                                    >
+                                                </li>
+                                                <li>
+                                                    Enter payment amount:
+                                                    <strong>Rp1.120.000</strong>
+                                                </li>
+                                                <li>Confirm transaction</li>
+                                                <li>
+                                                    Save receipt as payment
+                                                    proof
+                                                </li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div
+                                class="mb-3 px-4 py-2 d-flex align-items-center gap-2"
+                                style="
+                                    background-color: #e6edff;
+                                    border-radius: 8px;
+                                "
+                            >
+                                <img
+                                    src="../../../public/assets/images/icons/ic-information.svg"
+                                    alt="information"
+                                    style="
+                                        width: 15px;
+                                        height: 15px;
+                                        flex-shrink: 0;
+                                    "
+                                />
+                                <p
+                                    class="mb-0"
+                                    style="font-size: 11px; color: #181818"
+                                >
+                                    After payment verification, e-Ticket and
+                                    payment proof will be sent to your
+                                    registered email address
+                                </p>
+                            </div>
+
+                            <div class="d-flex gap-2">
+                                <a
+                                    href="payment-method.html"
+                                    class="btn btn-primary flex-fill"
+                                >
+                                    Change Payment Method
+                                </a>
+                                <a class="btn btn-outline-primary flex-fill">
+                                    View Order List
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Section -->
+                    <div class="col-lg-5 col-12">
+                        <!-- Participant -->
+                        <div id="card-body" class="mb-4">
+                            <div class="card-title">
+                                <h2 class="title lg">Participant</h2>
+                            </div>
+                            <div class="input-review-wrapper">
+                                <div class="input-review">
+                                    <p>
+                                        Registered as<br /><span
+                                            class="fw-semibold"
+                                            >sultan@jordy.com - Jordy
+                                            <span
+                                                class="text-danger"
+                                                style="font-weight: 600"
+                                                >(4536)</span
+                                            ></span
+                                        >
+                                    </p>
+                                </div>
+                                <div class="input-review">
+                                    <p>
+                                        Registered as<br /><span
+                                            class="fw-semibold"
+                                            >fahril@anggaara.com - Angga
+                                            <span
+                                                class="text-danger"
+                                                style="font-weight: 600"
+                                                >(1234)</span
+                                            ></span
+                                        >
+                                    </p>
+                                </div>
+                                <div class="input-review">
+                                    <p>
+                                        Registered as<br /><span
+                                            class="fw-semibold"
+                                            >ilham@ramadan.com - Ilham
+                                            <span
+                                                class="text-danger"
+                                                style="font-weight: 600"
+                                                >(2323)</span
+                                            ></span
+                                        >
+                                    </p>
+                                </div>
+                                <div class="input-review">
+                                    <p>
+                                        Registered as<br /><span
+                                            class="fw-semibold"
+                                            >irvan@pramana.com - Irvan
+                                            <span
+                                                class="text-danger"
+                                                style="font-weight: 600"
+                                                >(1253)</span
+                                            ></span
+                                        >
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Billing Details -->
+                        <div id="card-body" class="mb-4">
+                            <div class="card-title">
+                                <h2 class="title lg">BILLING DETAILS</h2>
+                                <p class="description">
+                                    Please pay according to the amount shown
+                                    below.
+                                </p>
+                            </div>
+
+                            <div class="mb-3">
+                                <small class="text-muted">Event Category</small
+                                ><br />
+                                <span class="fw-bold">Labsco 5K NSNL</span>
+                            </div>
+
+                            <div class="mb-3">
+                                <small class="text-muted">Quantity</small><br />
+                                <span class="fw-bold">4 People</span>
+                            </div>
+
+                            <div class="mb-3">
+                                <small class="text-muted">Fee</small><br />
+                                <span class="fw-bold">Rp1.220.000</span>
+                            </div>
+
+                            <div class="mb-3">
+                                <small class="text-muted"
+                                    >Voucher Discount</small
+                                ><br />
+                                <span class="text-danger fw-bold"
+                                    >- Rp100.000</span
+                                >
+                            </div>
+
+                            <hr />
+
+                            <div class="mb-0">
+                                <small class="text-muted">Subtotal</small><br />
+                                <span class="text-success fw-bold fs-5"
+                                    >Rp1.120.000</span
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            <!-- Bootstrap JS & Icons -->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+            <script>
+                // Countdown Timer
+                function updateCountdown() {
+                    // Set countdown time (23 hours 59 minutes 40 seconds from now)
+                    let timeLeft = 23 * 3600 + 59 * 60 + 40; // in seconds
+
+                    setInterval(() => {
+                        if (timeLeft <= 0) {
+                            document.getElementById("countdown").textContent =
+                                "0 hours 0 minutes 0 seconds";
+                            return;
+                        }
+
+                        const hours = Math.floor(timeLeft / 3600);
+                        const minutes = Math.floor((timeLeft % 3600) / 60);
+                        const seconds = timeLeft % 60;
+
+                        document.getElementById(
+                            "countdown"
+                        ).textContent = `${hours} hours ${minutes} minutes ${seconds} seconds`;
+
+                        timeLeft--;
+                    }, 1000);
+                }
+
+                // Copy to clipboard function
+                function copyToClipboard(text) {
+                    navigator.clipboard
+                        .writeText(text)
+                        .then(() => {
+                            alert(
+                                "Virtual Account number copied successfully!"
+                            );
+                        })
+                        .catch((err) => {
+                            console.error("Failed to copy: ", err);
+                        });
+                }
+
+                // Initialize countdown on page load
+                document.addEventListener("DOMContentLoaded", updateCountdown);
+            </script>
+        </div>
+    </body>
+</html>

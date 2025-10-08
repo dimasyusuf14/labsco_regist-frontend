@@ -19,228 +19,235 @@
     </head>
 
     <body>
-        <main id="main">
-            <div class="text-start mb-5">
-                <h2 class="fw-bold mb-1">Event Registration</h2>
-                <p class="text-muted" style="font-size: 16px">
-                    Please enter your personal information accurately, step by
-                    step.
-                </p>
-            </div>
-            <!-- card navigation -->
-            <div id="card-navigation" class="">
-                <div class="card-nav-item active">
-                    <button type="button" class="card-nav-btn">
-                        <span>1</span>
-                    </button>
-                    <p class="card-nav-label">Data Diri</p>
+        <div class="container-fluid">
+            <main id="main" class="registration mx-auto px-4">
+                <div class="text-start mb-5">
+                    <h2 class="fw-bold mb-1">Event Registration</h2>
+                    <p class="text-muted" style="font-size: 16px">
+                        Please enter your personal information accurately, step
+                        by step.
+                    </p>
                 </div>
-
-                <div class="card-nav-item">
-                    <button type="button" class="card-nav-btn">
-                        <span>2</span>
-                    </button>
-                    <p class="card-nav-label">Kontak Darurat &amp; Medis</p>
-                </div>
-
-                <div class="card-nav-item">
-                    <button type="button" class="card-nav-btn">
-                        <span>3</span>
-                    </button>
-                    <p class="card-nav-label">Racepack</p>
-                </div>
-
-                <div class="card-nav-item">
-                    <button type="button" class="card-nav-btn">
-                        <span>4</span>
-                    </button>
-                    <p class="card-nav-label">Konfirmasi Data</p>
-                </div>
-            </div>
-
-            <section id="card">
-                <div
-                    class="card mb-4 py-3 text-center"
-                    style="border-radius: 16px"
-                >
-                    <h3 class="fw-bold mb-1" style="color: #375ad9">
-                        Participant: 1/4
-                    </h3>
-                </div>
-            </section>
-
-            <!-- start of card form registration one -->
-            <section id="card">
-                <form id="card-body">
-                    <div class="card-title">
-                        <h2 class="title lg">Participant Information</h2>
-                        <p class="description">
-                            Please fill in the form below to enter your personal
-                            information.<br />If there is an asterisk
-                            <span class="text-danger">*</span>, it means the
-                            field is required.
-                        </p>
+                <!-- card navigation -->
+                <div id="card-navigation" class="">
+                    <div class="card-nav-item active">
+                        <button type="button" class="card-nav-btn">
+                            <span>1</span>
+                        </button>
+                        <p class="card-nav-label">Data Diri</p>
                     </div>
 
-                    <div class="mb-3">
-                        <label for="email" class="form-label"
-                            >Email <span class="text-danger">*</span></label
-                        >
-                        <input
-                            type="email"
-                            class="form-control"
-                            id="email"
-                            placeholder="Placeholder"
-                        />
+                    <div class="card-nav-item">
+                        <button type="button" class="card-nav-btn">
+                            <span>2</span>
+                        </button>
+                        <p class="card-nav-label">Kontak Darurat &amp; Medis</p>
                     </div>
 
-                    <div class="mb-3">
-                        <label for="confirmEmail" class="form-label"
-                            >Confirmation Email
-                            <span class="text-danger">*</span></label
-                        >
-                        <input
-                            type="email"
-                            class="form-control"
-                            id="confirmEmail"
-                            placeholder="Placeholder"
-                        />
+                    <div class="card-nav-item">
+                        <button type="button" class="card-nav-btn">
+                            <span>3</span>
+                        </button>
+                        <p class="card-nav-label">Racepack</p>
                     </div>
 
-                    <div class="mb-3">
-                        <label for="foster_phone" class="form-label"
-                            >Phone Number
-                            <span class="text-danger">*</span></label
-                        >
-                        <div class="input-group">
-                            <select
-                                class="form-select"
-                                id="country_code"
-                                name="country_code"
-                                style="max-width: 95px"
+                    <div class="card-nav-item">
+                        <button type="button" class="card-nav-btn">
+                            <span>4</span>
+                        </button>
+                        <p class="card-nav-label">Konfirmasi Data</p>
+                    </div>
+                </div>
+
+                <section id="card">
+                    <div
+                        class="card mb-4 py-3 text-center"
+                        style="border-radius: 16px"
+                    >
+                        <h3 class="fw-bold mb-1" style="color: #375ad9">
+                            Participant: 1/4
+                        </h3>
+                    </div>
+                </section>
+
+                <!-- start of card form registration one -->
+                <section id="card">
+                    <form id="card-body">
+                        <div class="card-title">
+                            <h2 class="title lg">Participant Information</h2>
+                            <p class="description">
+                                Please fill in the form below to enter your
+                                personal information.<br />If there is an
+                                asterisk <span class="text-danger">*</span>, it
+                                means the field is required.
+                            </p>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="email" class="form-label"
+                                >Email <span class="text-danger">*</span></label
                             >
-                                <!-- <option value="">Select Country</option> -->
-                            </select>
-
                             <input
-                                type="number"
+                                type="email"
                                 class="form-control"
-                                id="foster_phone"
-                                name="foster_phone"
-                                placeholder="Enter your phone number"
-                                required
+                                id="email"
+                                placeholder="Placeholder"
                             />
                         </div>
-                    </div>
 
-                    <div class="mb-3">
-                        <label for="fname" class="form-label"
-                            >First Name
-                            <span class="text-danger">*</span></label
-                        >
-                        <input
-                            type="text"
-                            class="form-control"
-                            id="fname"
-                            placeholder="Placeholder"
-                        />
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="lname" class="form-label"
-                            >Last Name <span class="text-danger">*</span></label
-                        >
-                        <input
-                            type="text"
-                            class="form-control"
-                            id="lname"
-                            placeholder="Placeholder"
-                        />
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="dob" class="form-label"
-                            >Date of Birth
-                            <span class="text-danger">*</span></label
-                        >
-                        <input
-                            type="date"
-                            class="form-control"
-                            id="dob"
-                            placeholder="Placeholder"
-                        />
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="gender" class="form-label"
-                            >Gender <span class="text-danger">*</span></label
-                        >
-                        <select class="form-select" id="gender">
-                            <option selected>Placeholder</option>
-                            <option value="male">Male</option>
-                            <option value="female">Female</option>
-                        </select>
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="ktp" class="form-label"
-                            >KTP/Passport
-                            <span class="text-danger">*</span></label
-                        >
-                        <input
-                            type="text"
-                            class="form-control"
-                            id="ktp"
-                            placeholder="Placeholder"
-                        />
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="nationality" class="form-label"
-                            >Nationality
-                            <span class="text-danger">*</span></label
-                        >
-                        <select class="form-select" id="nationality">
-                            <option selected>Placeholder</option>
-                            <option value="indonesia">Indonesia</option>
-                            <option value="foreigner">Foreigner</option>
-                        </select>
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="city" class="form-label"
-                            >City <span class="text-danger">*</span></label
-                        >
-                        <input
-                            type="text"
-                            class="form-control"
-                            id="city"
-                            placeholder="Placeholder"
-                        />
-                    </div>
-
-                    <div class="card-button on-side">
-                        <a href="#" class="btn btn-outline-secondary">
-                            <img
-                                src="../../../../public/assets/images/icons/ic-arrow-back.svg"
-                                alt="Back"
-                                style="width: 13px; height: 11px"
+                        <div class="mb-3">
+                            <label for="confirmEmail" class="form-label"
+                                >Confirmation Email
+                                <span class="text-danger">*</span></label
+                            >
+                            <input
+                                type="email"
+                                class="form-control"
+                                id="confirmEmail"
+                                placeholder="Placeholder"
                             />
-                            Back
-                        </a>
-                        <a href="registration-two.html" class="btn btn-primary">
-                            Next
-                            <img
-                                src="../../../../public/assets/images/icons/ic-arrow-next.svg"
-                                alt="Next"
-                                style="width: 13px; height: 11px"
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="foster_phone" class="form-label"
+                                >Phone Number
+                                <span class="text-danger">*</span></label
+                            >
+                            <div class="input-group">
+                                <select
+                                    class="form-select"
+                                    id="country_code"
+                                    name="country_code"
+                                    style="max-width: 95px"
+                                >
+                                    <!-- <option value="">Select Country</option> -->
+                                </select>
+
+                                <input
+                                    type="number"
+                                    class="form-control"
+                                    id="foster_phone"
+                                    name="foster_phone"
+                                    placeholder="Enter your phone number"
+                                    required
+                                />
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="fname" class="form-label"
+                                >First Name
+                                <span class="text-danger">*</span></label
+                            >
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="fname"
+                                placeholder="Placeholder"
                             />
-                        </a>
-                    </div>
-                </form>
-            </section>
-            <!-- end of card form registration one -->
-        </main>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="lname" class="form-label"
+                                >Last Name
+                                <span class="text-danger">*</span></label
+                            >
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="lname"
+                                placeholder="Placeholder"
+                            />
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="dob" class="form-label"
+                                >Date of Birth
+                                <span class="text-danger">*</span></label
+                            >
+                            <input
+                                type="date"
+                                class="form-control"
+                                id="dob"
+                                placeholder="Placeholder"
+                            />
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="gender" class="form-label"
+                                >Gender
+                                <span class="text-danger">*</span></label
+                            >
+                            <select class="form-select" id="gender">
+                                <option selected>Placeholder</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="ktp" class="form-label"
+                                >KTP/Passport
+                                <span class="text-danger">*</span></label
+                            >
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="ktp"
+                                placeholder="Placeholder"
+                            />
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="nationality" class="form-label"
+                                >Nationality
+                                <span class="text-danger">*</span></label
+                            >
+                            <select class="form-select" id="nationality">
+                                <option selected>Placeholder</option>
+                                <option value="indonesia">Indonesia</option>
+                                <option value="foreigner">Foreigner</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="city" class="form-label"
+                                >City <span class="text-danger">*</span></label
+                            >
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="city"
+                                placeholder="Placeholder"
+                            />
+                        </div>
+
+                        <div class="card-button on-side">
+                            <a href="#" class="btn btn-outline-secondary">
+                                <img
+                                    src="../../../../public/assets/images/icons/ic-arrow-back.svg"
+                                    alt="Back"
+                                    style="width: 13px; height: 11px"
+                                />
+                                Back
+                            </a>
+                            <a
+                                href="registration-two.html"
+                                class="btn btn-primary"
+                            >
+                                Next
+                                <img
+                                    src="../../../../public/assets/images/icons/ic-arrow-next.svg"
+                                    alt="Next"
+                                    style="width: 13px; height: 11px"
+                                />
+                            </a>
+                        </div>
+                    </form>
+                </section>
+                <!-- end of card form registration one -->
+            </main>
+        </div>
 
         <!-- Bootstrap JS & Icons -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
