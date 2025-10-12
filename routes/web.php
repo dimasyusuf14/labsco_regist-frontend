@@ -13,12 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Route::get('/category-run', function () {
     return view('app.category-run');
+});
+
+Route::get('/scanner-qr', function () {
+    return view('app.scanner-qr');
 });
 
 Route::get('/login-page', function () {

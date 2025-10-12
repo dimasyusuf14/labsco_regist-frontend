@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link rel="stylesheet" href="../../../public/assets/css/custom.css" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+            crossorigin="anonymous"
+        />
+
+        <title>QR Scanner</title>
+    </head>
+
+    <body>
+        <main id="main" class="category-run">
+            <section id="card-scanner">
+                <div class="scanner-container text-center p-4">
+                    <!-- Manual Input -->
+                    <div
+                        class="ticket-code-container mb-4 d-flex justify-content-center"
+                    >
+                        <input
+                            type="text"
+                            class="form-control ticket-code-input me-2"
+                            id="manualInput"
+                            placeholder="Input ticket code"
+                            style="max-width: 250px"
+                        />
+                        <button
+                            class="btn btn-outline-secondary ticket-code-btn"
+                            onclick="processManualInput()"
+                        >
+                            ENTER
+                        </button>
+                    </div>
+
+                    <!-- Reader -->
+                    <div
+                        id="reader"
+                        style="width: 300px; margin: auto; display: none"
+                    ></div>
+
+                    <!-- Placeholder -->
+                    <div
+                        id="qrPlaceholder"
+                        class="qr-icon-placeholder text-center"
+                    >
+                        <img
+                            src="/assets/images/icons/ic-qr-code.svg"
+                            alt="QR Icon"
+                            style="width: 150px; height: 150px"
+                        />
+                        <div class="placeholder-text mt-3">
+                            <div>Click “Start Scanner” to start</div>
+                            <div>scanning the QR code</div>
+                        </div>
+                    </div>
+
+                    <!-- Controls -->
+                    <div class="scanner-controls mt-4">
+                        <button
+                            id="startBtn"
+                            class="btn btn-primary me-2"
+                            onclick="startScanner()"
+                        >
+                            Start Scanner
+                        </button>
+                        <button
+                            id="stopBtn"
+                            class="btn btn-danger"
+                            onclick="stopScanner()"
+                            style="display: none"
+                        >
+                            Stop Scanner
+                        </button>
+                    </div>
+
+                    <!-- Scan Result -->
+                    <div
+                        id="result"
+                        class="scan-result mt-4"
+                        style="display: none"
+                    >
+                        <strong>Scan Result:</strong>
+                        <div id="resultText" class="mt-2"></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- HTML5 QR Code Library -->
+        <script src="https://unpkg.com/html5-qrcode@2.3.8/minified/html5-qrcode.min.js"></script>
+        <script>
+            let html5QrCode = null;
+            let currentCameraId = null;
+            let isScanning = false;
+
+            async function startScanner() {
+                try {
+                    // Hide placeholder and show reader
+                    document.getElementById("qrPlaceholder").style.display =
+                        "none";
+                    document.getElementById("reader").style.display = "block";
+
+                    // Hide start button, show stop button
+                    document.getElementById("startBtn").style.display = "none";
+                    document.getElementById("stopBtn").style.display =
+                        "inline-block";
+
+                    // Buat instance baru
+                    html5QrCode = new Html5Qrcode("reader");
+
+                    // Dapatkan daftar kamera
+                    const devices = await Html5Qrcode.getCameras();
+                    if (!devices || devices.length === 0) {
+                        alert("Tidak ada kamera ditemukan.");
+                        resetUI();
+                        return;
+                    }
+
+                    // Pilih kamera belakang jika ada
+                    currentCameraId =
+                        devices.find((d) =>
+                            d.label.toLowerCase().includes("back")
+                        )?.id || devices[0].id;
+
+                    // Mulai kamera
+                    await html5QrCode.start(
+                        currentCameraId,
+                        {
+                            fps: 10,
+                            qrbox: { width: 250, height: 250 },
+                        },
+                        (decodedText, decodedResult) => {
+                            console.log("Scan result:", decodedText);
+                            showResult(decodedText);
+                            stopScanner();
+                        },
+                        (errorMessage) => {
+                            // Tidak perlu tampilkan setiap error kecil
+                        }
+                    );
+
+                    isScanning = true;
+                    console.log("Scanner started.");
+                } catch (err) {
+                    console.error("Error memulai scanner:", err);
+                    alert(
+                        "Gagal memulai kamera. Pastikan izin kamera telah diberikan."
+                    );
+                    resetUI();
+                }
+            }
+
+            async function stopScanner() {
+                if (html5QrCode && isScanning) {
+                    try {
+                        await html5QrCode.stop();
+                        await html5QrCode.clear();
+                        console.log("Scanner stopped.");
+                    } catch (err) {
+                        console.warn("Gagal menghentikan scanner:", err);
+                    }
+                }
+                resetUI();
+            }
+
+            function resetUI() {
+                document.getElementById("reader").style.display = "none";
+                document.getElementById("qrPlaceholder").style.display = "flex";
+                document.getElementById("startBtn").style.display =
+                    "inline-block";
+                document.getElementById("stopBtn").style.display = "none";
+                isScanning = false;
+                html5QrCode = null;
+            }
+
+            function showResult(text) {
+                const resultDiv = document.getElementById("result");
+                const resultText = document.getElementById("resultText");
+                resultText.textContent = text;
+                resultDiv.style.display = "block";
+            }
+
+            function processManualInput() {
+                const manualInput = document.getElementById("manualInput");
+                const inputValue = manualInput.value.trim();
+                if (inputValue) {
+                    showResult(inputValue);
+                    processScannedData(inputValue);
+                    manualInput.value = "";
+                } else {
+                    alert("Please enter a ticket code");
+                }
+            }
+
+            function processScannedData(data) {
+                console.log("Processing data:", data);
+            }
+        </script>
+    </body>
+</html>

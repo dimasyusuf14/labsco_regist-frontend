@@ -317,6 +317,11 @@ textarea.form-control {
     max-width: 700px;
 }
 
+#card-scanner {
+    margin: 0 auto;
+    max-width: 400px;
+}
+
 #card-tnc {
     margin: 0 auto;
     max-width: 960px;
@@ -1701,4 +1706,142 @@ div:where(.swal2-container) .swal2-html-container {
 .payment-success-btn:hover {
     background-color: #2c4ac7;
     transform: translateY(-1px);
+}
+
+/* ticket-code Input Group Styling */
+.ticket-code-card {
+    background-color: var(--white-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    margin-bottom: 16px;
+}
+
+.ticket-code-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0px;
+}
+
+.ticket-code-input {
+    height: 40px;
+    font-size: 15px;
+    border-radius: 8px;
+    border: 1.5px solid var(--border-color);
+}
+
+.ticket-code-btn {
+    /* Lines 1734-1742 omitted */
+}
+
+.scanner-container {
+    width: 354px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    background-color: #f8f9fa;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 0 auto;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.qr-reader {
+    width: 100%;
+    height: 450px;
+    border-radius: 8px;
+    overflow: hidden;
+    display: none;
+    position: relative;
+}
+
+/* Placeholder */
+.qr-icon-placeholder {
+    width: 100%;
+    height: 450px;
+    border-radius: 8px;
+    background-color: #fff;
+    border: 2px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.qr-icon {
+    width: 150px;
+    height: 150px;
+}
+
+.placeholder-text {
+    color: #6c757d;
+    font-size: 16px;
+    text-align: center;
+    font-weight: 500;
+}
+
+/* Loading */
+.qr-loading {
+    width: 100%;
+    height: 450px;
+    border-radius: 8px;
+    border: 2px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Video */
+#reader video {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    border-radius: 8px !important;
+}
+
+/* Result Box */
+.scan-result {
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    border-radius: 5px;
+    padding: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
+    overflow-wrap: break-word;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.scan-result #resultText {
+    word-wrap: break-word;
+    word-break: break-all;
+    overflow-wrap: break-word;
+    white-space: pre-wrap;
+    max-width: 100%;
+    overflow: hidden;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* Responsive handling untuk scan result */
+@media (max-width: 400px) {
+    .scanner-container {
+        width: calc(100vw - 40px);
+        max-width: 354px;
+        min-width: 300px;
+    }
+
+    .scan-result {
+        font-size: 0.9rem;
+        padding: 12px;
+    }
+
+    .scan-result #resultText {
+        font-size: 0.85rem;
+        max-height: 120px;
+        overflow-y: auto;
+    }
 }
