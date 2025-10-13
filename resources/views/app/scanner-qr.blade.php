@@ -57,9 +57,9 @@
                     <h5 id="confirmationModalLabel" class="fw-bold mb-3">Confirmation Dialog</h5>
                     <p id="scannedText" class="text-secondary mb-4"></p>
                     <div class="d-flex justify-content-center gap-3">
-                        <button type="button" class="btn btn-warning text-white px-4"
+                        <button type="button" class="btn btn-warning text-white px-4" id="cancelBtn"
                             data-bs-dismiss="modal">Cancel</button>
-                        <button type="button" class="btn btn-primary px-4" onclick="confirmResult()">Confirmation</button>
+                        <button type="button" class="btn btn-primary px-4" id="confirmBtn">Confirmation</button>
                     </div>
                 </div>
             </div>
@@ -70,6 +70,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/html5-qrcode"></script>
 
     <script>
         let html5QrCode = null;
@@ -77,6 +78,7 @@
         let currentCameraId = null;
         let isScanning = false;
         let lastScannedData = null;
+        let modalVisible = false;
 
         async function startScanner() {
             try {
@@ -108,8 +110,11 @@
                         }
                     },
                     (decodedText) => {
-                        showConfirmationDialog(decodedText);
-                        stopScanner();
+                        // Cegah pemanggilan berulang saat modal masih terbuka
+                        if (!modalVisible && decodedText !== lastScannedData) {
+                            lastScannedData = decodedText;
+                            showConfirmationDialog(decodedText);
+                        }
                     }
                 );
 
@@ -150,8 +155,10 @@
                     }
                 },
                 (decodedText) => {
-                    showConfirmationDialog(decodedText);
-                    stopScanner();
+                    if (!modalVisible && decodedText !== lastScannedData) {
+                        lastScannedData = decodedText;
+                        showConfirmationDialog(decodedText);
+                    }
                 }
             );
         }
@@ -176,17 +183,35 @@
         }
 
         function showConfirmationDialog(text) {
+            modalVisible = true;
             lastScannedData = text;
             document.getElementById("scannedText").textContent = text;
             const modal = new bootstrap.Modal(document.getElementById("confirmationModal"));
             modal.show();
+
+            // Reset modalVisible saat modal ditutup
+            const modalElement = document.getElementById("confirmationModal");
+            modalElement.addEventListener('hidden.bs.modal', () => {
+                modalVisible = false;
+            }, {
+                once: true
+            });
         }
 
-        function confirmResult() {
-            console.log("Confirmed Data:", lastScannedData);
-            const modal = bootstrap.Modal.getInstance(document.getElementById("confirmationModal"));
-            modal.hide();
-            alert("Data confirmed: " + lastScannedData);
-        }
+        // Tombol Confirmation
+        document.addEventListener("DOMContentLoaded", () => {
+            document.getElementById("confirmBtn").addEventListener("click", () => {
+                console.log("Confirmed Data:", lastScannedData);
+                const modal = bootstrap.Modal.getInstance(document.getElementById("confirmationModal"));
+                modal.hide();
+                alert("Data confirmed: " + lastScannedData);
+                modalVisible = false;
+            });
+
+            // Tombol Cancel
+            document.getElementById("cancelBtn").addEventListener("click", () => {
+                modalVisible = false;
+            });
+        });
     </script>
 @endsection
